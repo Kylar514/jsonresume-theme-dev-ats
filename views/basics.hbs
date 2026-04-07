@@ -14,10 +14,16 @@
         {{#if location~}}{{#if location.city~}}{{#if location.countryCode~}}
         <span class="vertical-separator">{{location.city}}, {{location.countryCode}}</span>
         {{~/if}}{{~/if}}{{~/if}}
-        {{#if url~}}
-        <span class="vertical-separator">{{wrapURL url}}</span>
-        {{~/if}}
     </div>
+    {{#if profiles.length}}
+    <div class="contact centered">
+        {{#each profiles}}
+        <span class="vertical-separator">
+            {{network}}: <a href="{{url}}">{{username}}</a>
+        </span>
+        {{/each}}
+    </div>
+    {{/if}}
     {{#if summary}}
     <div class="summary">
         <h2>Summary</h2>
