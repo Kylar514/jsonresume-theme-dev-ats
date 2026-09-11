@@ -11,6 +11,12 @@ h1 {
     margin: 5px;
 }
 
+.label {
+    font-size: 13px;
+    text-align: center;
+    margin: 2px 0 4px 0;
+}
+
 h2 {
     border-width: 1px;
     border-style: none none solid none;
@@ -33,11 +39,15 @@ a {
 
 .item {
     margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .item>.item-header {
-    float: left;
-    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .item>.item-header>.item-header-title {
@@ -49,20 +59,34 @@ a {
 }
 
 .item>.item-details {
-    float: right;
+    flex: 0 0 auto;
     text-align: right;
+    margin-left: 12px;
 }
 
 .item>.item-details>.item-details-title {
     font-weight: bold;
 }
 
-.clearfix {
-    clear: both;
+/* item-body breaks out of the flex row and spans full width */
+.item>.item-body {
+    flex: 0 0 100%;
 }
 
 .centered {
     text-align: center;
+}
+
+/* Skills grid */
+.skills-list {
+    column-count: 6;
+    column-gap: 0;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.skills-list li {
+    break-inside: avoid;
 }
 
 /* Section specific */
@@ -73,7 +97,7 @@ a {
 }
 
 .vertical-separator:not(:first-child) {
-    border-left: 1px solid #000;
+    border-left: 0.5px solid #666;
     text-align: center;
 }
 

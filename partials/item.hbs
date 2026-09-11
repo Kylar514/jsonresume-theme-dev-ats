@@ -1,6 +1,5 @@
 <div class="item">
     {{> item-header title=title subtitle=subtitle }}
     {{> item-details location=location startDate=startDate endDate=endDate url=url mainUrl=mainUrl}}
-    <div class="clearfix"></div>
-    {{> @partial-block }}
+    <div class="item-body">{{> @partial-block }}</div>
 </div>
